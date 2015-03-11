@@ -29,8 +29,9 @@
     <div class="container">
         <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
         <!-- p means paragraph -->
+        <center>
 
-
+<h3><span id="tag">Class</span> </center></h3>
         <h4>Resources</h4>
         <!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
         <!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
@@ -56,9 +57,24 @@
 
 
 
-<!--<span id="tag">test</span>-->
 
 <script>
+    function getQueryVariable(variable)
+    {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+      }
+      return(pair[1]);
+    }
+
+
+    var r = getQueryVariable("r");
+    var s = r.replace("+", " ")
+
+  document.getElementById("tag").textContent=s;
   // Get references to the objects you need (<select> and <span>)
   var list = document.getElementById('course');
   var tag = document.getElementById('tag');
